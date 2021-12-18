@@ -1,0 +1,13 @@
+{
+    "defaultCommandTimeout":4000,
+    "pageLoadTimeout": 40000,
+    "reporter": "mochawesome",
+    "retries": 2,
+    "env":
+    {
+        "url": "https://www.alibaba.ir/"
+    },
+
+    "projectId": "ny647d"
+    
+}

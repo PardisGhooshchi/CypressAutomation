@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-12-17T21:12:40.159Z",
+    "end": "2021-12-17T21:13:03.103Z",
+    "duration": 22944,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7de0efd7-21bc-4379-9586-00d673e09f1d",
+      "title": "",
+      "fullFile": "cypress/integration/examples/Search.js",
+      "file": "cypress/integration/examples/Search.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "768d8f2a-8ac5-417e-a286-d1005cdbe902",
+          "title": "Test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Search Test Case",
+              "fullTitle": "Test suite Search Test Case",
+              "timedOut": null,
+              "duration": 21074,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst contactUsPage = new _ContactUsPage.default(); //**open url\ncy.visit(Cypress.env('url')); //**checking visibility of source input\nhomePage.getDestinationInput().should('be.visible'); //**entering Source \nhomePage.getSourceInput().type(this.data.source);\nhomePage.tehranItem().click();\n/*\nhomePage.getSourceInput().type('ت')\nhomePage.destinationItem().each(($e1, index, $list) => {\nif($e1.text() == this.data.source)\n{\n   $e1.click()\n}\n})\n*/\n//**checking visibility of destination input\nhomePage.getDestinationInput().should('be.visible'); //**entering and selecting destination\nhomePage.getDestinationInput().type(this.data.destination);\nhomePage.mashhadItem().click(); //**checking visibility of start date input\nhomePage.startDateInput().should('be.visible'); //**selecting start date\ncy.get(':nth-child(2) > .calendar-grid > :nth-child(22)').click(); //**selecting end date\n//**by using force:true the invisible element get visible\nhomePage.endDateInput().click({\n  force: true\n});\ncy.get(':nth-child(2) > .calendar-grid > :nth-child(24)').click(); //**clicking on confirm button in calendar\nhomePage.dateConfirmButton().click(); //**selecting five person\nfor (let n = 0; n < 4; n++) {\n  homePage.plusButton().click();\n} //**checking search button\n\nhomePage.searchButton().should('be.enabled'); //**selecting search button\n//cy.get('button[name=\"search\"]').click()\nhomePage.searchButton().click();\nCypress.config('pageLoadTimeout', 40000);\ncy.get('b[class=\"text-grays-600\"]', {\n  timeout: 10000\n}).should('be.visible'); //**checking result\nconst checkNumber = () => {\n  homePage.resultText().invoke('text').then(parseInt).then(number => {\n    cy.log(`**${number}**`);\n    if (number > 0) {\n      cy.log('**NICE!**'); // Cypress.config('pageLoadTimeout', 40000)\n      return;\n    }\n    cy.get('[data-test=\"next-button\"]').click();\n    Cypress.config('pageLoadTimeout', 40000);\n    checkNumber();\n  });\n};\ncheckNumber(); //**scroll into contact us\nhomePage.contactUs().scrollIntoView(); //clicking on contact us\nhomePage.contactUs().click();\ncy.wait(3000); //checking url\ncy.url().should('eq', this.data.contactUsUrl);\ncontactUsPage.contactUsText().should('have.text', 'تماس با ما');",
+              "err": {},
+              "uuid": "a8afa601-c928-48f7-ac31-59d082f4d325",
+              "parentUUID": "768d8f2a-8ac5-417e-a286-d1005cdbe902",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a8afa601-c928-48f7-ac31-59d082f4d325"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21074,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.0.1"
+    }
+  }
+}
