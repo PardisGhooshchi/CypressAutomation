@@ -1,5 +1,5 @@
 
-# Alibaba Search challenge
+# Search 
 
 This code displays the automatic flight search by using cypress!
 
